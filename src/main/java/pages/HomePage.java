@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -39,6 +40,11 @@ public class HomePage {
     public HorizontalSliderPage clickHorizontalSlider() {
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
+    }
+
+    public JavaScriptAlertsPage clickJavaScriptAlerts() {
+        clickLink("JavaScript Alerts");
+        return new JavaScriptAlertsPage(driver);
     }
 
     private void clickLink(String linkText) {
