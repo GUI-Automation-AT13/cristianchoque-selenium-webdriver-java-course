@@ -8,6 +8,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
+import utils.CookieManager;
 import utils.EventReporter;
 import utils.WindowManager;
 import java.io.File;
@@ -68,5 +69,9 @@ public class BaseTests {
                 .domain("the-internet.herokuapp.com")
                 .build();
         driver.manage().addCookie(cookie);
+    }
+
+    public CookieManager getCookieManager(){
+        return new CookieManager(driver);
     }
 }
