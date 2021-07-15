@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
     private WebDriver driver;
@@ -20,12 +21,13 @@ public class BaseTests {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        homePage = new HomePage(driver);
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @BeforeMethod
     public void goHome() {
         driver.get("https://the-internet.herokuapp.com/");
+        homePage = new HomePage(driver);
     }
 
     @AfterClass
