@@ -8,7 +8,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
-import utils.CookieManager;
+//import utils.CookieManager;
 import utils.EventReporter;
 import utils.WindowManager;
 import java.io.File;
@@ -24,7 +24,7 @@ public class BaseTests {
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         driver.register(new EventReporter());
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        setCookie();
+//        setCookie();
     }
 
     @BeforeMethod
@@ -68,10 +68,10 @@ public class BaseTests {
         Cookie cookie = new Cookie.Builder("tau", "123")
                 .domain("the-internet.herokuapp.com")
                 .build();
-        driver.manage().addCookie(cookie);
+//        driver.manage().addCookie(cookie);
     }
 
-    public CookieManager getCookieManager(){
-        return new CookieManager(driver);
-    }
+//    public CookieManager getCookieManager(){
+//        return new CookieManager(driver);
+//    }
 }
