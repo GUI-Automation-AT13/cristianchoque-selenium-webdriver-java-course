@@ -15,5 +15,4 @@ public class CookiesTests extends BaseTests {
         cookieManager.deleteCookie(cookie);
         assertFalse(cookieManager.isCookiePresent(cookie), "Cookie was not deleted");
     }
-
 }

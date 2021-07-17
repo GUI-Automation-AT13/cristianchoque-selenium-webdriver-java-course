@@ -23,7 +23,6 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         driver.register(new EventReporter());
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         setCookie();
     }
 
@@ -44,7 +43,6 @@ public class BaseTests {
         {
             var camera = (TakesScreenshot)driver;
             File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            //        System.out.println("Screenshot taken: " + screenshot.getAbsolutePath());
             try{
                 Files.move(screenshot, new File("resources\\screenshots" + result.getName() + ".png"));
             }catch(IOException e){
@@ -60,7 +58,6 @@ public class BaseTests {
     private ChromeOptions getChromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");
-        //options.setHeadless(true);
         return options;
     }
 

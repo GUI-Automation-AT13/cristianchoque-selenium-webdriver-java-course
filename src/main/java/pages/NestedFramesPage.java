@@ -19,15 +19,15 @@ public class NestedFramesPage {
         driver.switchTo().frame(topFrame);
         driver.switchTo().frame(leftFrame);
         String text = getFrameText();
-        driver.switchTo().parentFrame(); //exit left to top
-        driver.switchTo().parentFrame(); //exit top to main
+        driver.switchTo().parentFrame();
+        driver.switchTo().parentFrame();
         return text;
     }
 
     public String getBottomFrameText(){
         driver.switchTo().frame(bottomFrame);
         String text = getFrameText();
-        driver.switchTo().parentFrame(); //exit top to main
+        driver.switchTo().parentFrame();
         return text;
     }
 

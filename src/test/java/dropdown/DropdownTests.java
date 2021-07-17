@@ -28,5 +28,4 @@ public class DropdownTests extends BaseTests {
         assertTrue(selectedOptions.containsAll(optionsToSelect), "All options were not selected");
         assertEquals(selectedOptions.size(), optionsToSelect.size(), "Number of selected items");
     }
-
 }
